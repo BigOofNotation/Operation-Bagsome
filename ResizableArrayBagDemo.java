@@ -145,11 +145,6 @@ public class ResizableArrayBagDemo
 
 
 
-   private static void testUnion(BagInterface<String> aBag, BagInterface<String> bBag) {
-      //BagInterface<> temp = aBag.union(bBag);
-      displayBag(temp);
-
-   }
 
 
 
