@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 /**
    An interface that describes the operations of a bag of objects.
    @author Frank M. Carrano
@@ -48,10 +50,21 @@ public interface BagInterface<T>
 	public T[] toArray();
 
 
+	/** Method that returns a combination of this bag and otherBag
+		@param otherBag The other bag 
+		@return A bag which is a union of this bag & otherBag */
+		public BagInterface<T> union(BagInterface<T> otherBag);
 
-	public BagInterface<T> union(BagInterface<T> otherBag);
-
-	public BagInterface<T> intersection(BagInterface<T> otherBag);
-
-	public BagInterface<T> difference(BagInterface<T> otherBag);
+		/** Method which returns a bag that is an intersection this bag and otherBag.
+			 Returned bag only contains items present in both bags.
+			@param otherBag The other bag 
+			@return A bag which is an intersection of this bag & otherBag*/
+		public BagInterface<T> intersection(BagInterface<T> otherBag);
+	
+		/** Method which returns a bag that is the difference of this bag and otherBag.
+			Returned bag contains items present in one bag, but not the other.
+			@param otherBag The other bag 
+			@return A bag which is a difference of this bag & otherBag*/
+		public BagInterface<T> difference(BagInterface<T> otherBag);
+	
 } // end BagInterface
