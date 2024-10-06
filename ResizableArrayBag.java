@@ -227,10 +227,10 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
 
 
 
-
-
-
-
+   /** Combines content of this bag with another bag
+    * @param otherBag The other bag that is being combined
+    * @return BagInterface<T> with the combined entries
+    */
    public BagInterface<T> union(BagInterface<T> otherBag){
       BagInterface<T> temp = new ResizableArrayBag<>();
 
@@ -245,6 +245,11 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       return temp;
    }
 
+
+   /** Finds the common entries, duplicates included, of this bag and another bag
+    * @param otherBag The other bag that is being compared
+    * @return BagInterface<T> with the common entries
+    */
    public BagInterface<T> intersection(BagInterface<T> otherBag){
 
       BagInterface<T> result = new ResizableArrayBag<>();
@@ -272,6 +277,11 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       return result;
    }
 
+
+   /** Finds the entries that are different, duplicates included, between this bag and another bag
+    * @param otherBag The other bag that is being compared
+    * @return BagInterface<T> with the entries that are different
+    */
    public BagInterface<T> difference(BagInterface<T> otherBag){
       BagInterface<T> result = this;
 
