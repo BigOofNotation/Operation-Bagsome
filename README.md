@@ -4,9 +4,9 @@ CS2400-03
 ## Group: BigOofNotation
 
 ### Members:
-**Elijah Chan**
-_Github: doom-boy_
-_CPP Email: eechan@cpp.edu_
+**Elijah Chan**  
+_Github: doom-boy_  
+_CPP Email: eechan@cpp.edu_  
 * Worked on ResizableArrayBags and ResizableArrayBagsDemo
 
 

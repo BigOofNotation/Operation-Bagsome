@@ -224,9 +224,6 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
    } // end checkintegrity
 
 
-
-
-
    /** Combines content of this bag with another bag
     * @param otherBag The other bag that is being combined
     * @return BagInterface<T> with the combined entries
@@ -245,7 +242,6 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       return temp;
    }
 
-
    /** Finds the common entries, duplicates included, of this bag and another bag
     * @param otherBag The other bag that is being compared
     * @return BagInterface<T> with the common entries
@@ -260,8 +256,8 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
          maxLength = other.length;
          
          for(int i = 0; i < maxLength; i++){
-            if(this.contains(other[i])){
-               result.add(other[i]);
+            if(otherBag.contains(bag[i])){
+               result.add(bag[i]);
             }
          }
       } else {
@@ -277,7 +273,6 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       return result;
    }
 
-
    /** Finds the entries that are different, duplicates included, between this bag and another bag
     * @param otherBag The other bag that is being compared
     * @return BagInterface<T> with the entries that are different
@@ -287,17 +282,11 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
 
       BagInterface<T> intersect = this.intersection(otherBag);
       T[] iArray = intersect.toArray();
-      System.out.println(result.getCurrentSize());
       for(int i = 0; i < iArray.length; i++){
          result.remove(iArray[i]);
       }
-
       return result;
    }
-
-
-
-
 } // end ResizableArrayBag
 
 
@@ -358,5 +347,29 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
  isEmpty finds the bag empty: OK.
  
  The bag contains 0 string(s), as follows:
+ 
+ Testing the Union, Intersection, and Difference of two bags.
+ First, we add to bag A.
+ Adding to the bag: A B C W O W
+ The bag contains 6 string(s), as follows:
+ A B C W O W
+
+ Now, we add to bag B.
+ Adding to the bag: A B B C
+ The bag contains 4 string(s), as follows:
+ A B B C
+
+ If we wanted the union of bag A with bag B, it would look like this.
+ The bag contains 10 string(s), as follows:
+ A B C W O W A B B C
+
+ If we looked for the characters of bag A that intersected with bag B, it would look like this.
+ The bag contains 3 string(s), as follows:
+ A B C
+
+ Finally, if we wanted the content of bag A that were different from bag B, it would look like this.
+ The bag contains 3 string(s), as follows:
+ W O W
+
  */
 

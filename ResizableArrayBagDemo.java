@@ -31,22 +31,25 @@ public class ResizableArrayBagDemo
       testIsEmpty(aBag, true);
 		displayBag(aBag);
 
-      String[] twocontent = {"A","A", "B", "C"};
+      //New contents to test union, intersection, and difference
+      String[] aContent = {"A", "B", "C", "W", "O", "W"};
+      String[] bContent = {"A","B", "B", "C"};
 
       BagInterface<String> bBag = new ResizableArrayBag<>();
 
-      testAdd(bBag, twocontent);
-      testAdd(aBag, contentsOfBag);
-      BagInterface<String> temp = aBag.union(bBag);
-      displayBag(temp);
+      System.out.println("Testing the Union, Intersection, and Difference of two bags.\nFirst, we add to bag A.");
+      testAdd(aBag, aContent);
+      System.out.println();
+      System.out.println("Now, we add to bag B.");
+      testAdd(bBag, bContent);
+      System.out.println();
 
-      BagInterface<String> temp2 = aBag.intersection(bBag);
-      displayBag(temp2);
-
-      BagInterface<String> temp3 = aBag.difference(bBag);
-      displayBag(temp3);
-
-
+      testUnion(aBag, bBag);
+      System.out.println();
+      testIntersection(aBag, bBag);
+      System.out.println();
+      testDifference(aBag, bBag);
+      System.out.println();
 	} // end main
 	
    // Tests the method add.
@@ -143,31 +146,26 @@ public class ResizableArrayBagDemo
 	} // end displayBag
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   //Tests the method union by using and displaying a temporary bag. 
+   private static void testUnion(BagInterface<String> aBag, BagInterface<String> bBag){
+      BagInterface<String> tempUnion = aBag.union(bBag);
+      System.out.println("If we wanted the union of bag A with bag B, it would look like this.");
+      displayBag(tempUnion);
+   }
+   
+   //Tests the method intersection by using and displaying a temporary bag.
+   private static void testIntersection(BagInterface<String> aBag, BagInterface<String> bBag){
+      BagInterface<String> tempIntersection = aBag.intersection(bBag);
+      System.out.println("If we looked for the characters of bag A that intersected with bag B, it would look like this.");
+      displayBag(tempIntersection);
+   }
+   
+   //Tests the method difference by using and displaying a temporary bag.
+   private static void testDifference(BagInterface<String> aBag, BagInterface<String> bBag){
+      BagInterface<String> tempDifference = aBag.difference(bBag);
+      System.out.println("Finally, if we wanted the content of bag A that were different from bag B, it would look like this.");
+      displayBag(tempDifference);
+   }
 
 } // end ResizableArrayBagDemo
 /*
@@ -227,4 +225,28 @@ public class ResizableArrayBagDemo
  isEmpty finds the bag empty: OK.
  
  The bag contains 0 string(s), as follows:
-*/
+
+ Testing the Union, Intersection, and Difference of two bags.
+ First, we add to bag A.
+ Adding to the bag: A B C W O W
+ The bag contains 6 string(s), as follows:
+ A B C W O W
+
+ Now, we add to bag B.
+ Adding to the bag: A B B C
+ The bag contains 4 string(s), as follows:
+ A B B C
+
+ If we wanted the union of bag A with bag B, it would look like this.
+ The bag contains 10 string(s), as follows:
+ A B C W O W A B B C
+
+ If we looked for the characters of bag A that intersected with bag B, it would look like this.
+ The bag contains 3 string(s), as follows:
+ A B C
+
+ Finally, if we wanted the content of bag A that were different from bag B, it would look like this.
+ The bag contains 3 string(s), as follows:
+ W O W
+
+ */
