@@ -10,7 +10,7 @@ _CPP Email: eechan@cpp.edu_
 * Worked on ResizableArrayBags and ResizableArrayBagsDemo
 
 **Matthew Bott**  
-_Github: MatthewBott  
+_Github: MatthewBott_
 _CPP Email: mabott@cpp.edu_  
 * Worked on LinkedBags and LinkedBagsDemo
 
