@@ -10,7 +10,7 @@ _CPP Email: eechan@cpp.edu_
 * Worked on ResizableArrayBags, ResizableArrayBagsDemo, BagDriver
 * Helped with LinkedBag1, LinkedBagTest
 
-**Josue De La Torre**
+**Josue De La Torre**  
 _Github: josuedelatorre35_  
 _CPP Email: josued@cpp.edu_  
 * Worked on BagInterface  
