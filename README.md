@@ -14,6 +14,8 @@ _Github: josuedelatorre35
 _CPP Email: josued@cpp.edu 
 * Worked on BagInterface
 * Worked on Big O Notation + explanations
+* Assisted with debugging LinkedBag
+
 
 **Matthew Bott**  
 _Github: MatthewBott_  
