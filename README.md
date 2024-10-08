@@ -7,13 +7,12 @@ CS2400-03
 **Elijah Chan**  
 _Github: doom-boy_  
 _CPP Email: eechan@cpp.edu_  
-_CPP Email: eechan@cpp.edu_ 
 * Worked on ResizableArrayBags, ResizableArrayBagsDemo, BagDriver
 * Helped with LinkedBag1, LinkedBagTest
 
 **Josue De La Torre**
-_Github: josuedelatorre35  
-_CPP Email: josued@cpp.edu  
+_Github: josuedelatorre35_  
+_CPP Email: josued@cpp.edu_  
 * Worked on BagInterface  
 * Helped with LinkedBag1, LinkedBagTest
 * Worked on Big O Notation + explanations
@@ -21,8 +20,7 @@ _CPP Email: josued@cpp.edu
 **Matthew Bott**  
 _Github: MatthewBott_  
 _CPP Email: mabott@cpp.edu_  
-* Worked on LinkedBag1
-* Worked on LinkedBags and LinkedBagsTest
+* Worked on LinkedBag1 and LinkedBagsTest
 
 ## Video Link
 https://youtu.be/S9ykfLcfo_E
