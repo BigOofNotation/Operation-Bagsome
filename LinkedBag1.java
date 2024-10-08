@@ -207,7 +207,7 @@ public final class LinkedBag1<T> implements BagInterface<T>
     public BagInterface<T> differenceBag1(BagInterface<T> BagInterface) {
         if (BagInterface == null) throw new IllegalArgumentException("The other bag cannot be null.");
 
-        LinkedBag1<T> leftovers1 = new LinkedBag1<>();
+        BagInterface<T> leftovers1 = new LinkedBag1<>();
         Node currentNode = this.firstNode;
         while (currentNode != null) {
             leftovers1.add(currentNode.data);
@@ -225,7 +225,7 @@ public final class LinkedBag1<T> implements BagInterface<T>
     public BagInterface<T> differenceBag2(BagInterface<T> BagInterface) {
         if (BagInterface == null) throw new IllegalArgumentException("The other bag cannot be null.");
 
-        LinkedBag1<T> leftovers2 = new LinkedBag1<>();
+        BagInterface<T> leftovers2 = new LinkedBag1<>();
         Node currentNode = firstNode;
         while (currentNode != null) {
             leftovers2.add(currentNode.data);
@@ -237,5 +237,9 @@ public final class LinkedBag1<T> implements BagInterface<T>
             currentNode = currentNode.next;
         }
         return leftovers2;
+    }
+    
+    public BagInterface<T> difference(BagInterface<T> BagInterface) {
+        return BagInterface;
     }
 } // end LinkedBag1
