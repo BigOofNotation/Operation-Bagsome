@@ -25,5 +25,4 @@ _CPP Email: mabott@cpp.edu_
 * Worked on LinkedBags and LinkedBagsTest
 
 ## Video Link
-
-placeholder link
+https://youtu.be/S9ykfLcfo_E
