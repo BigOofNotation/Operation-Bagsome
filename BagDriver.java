@@ -3,7 +3,7 @@ public class BagDriver {
     public static void main(String[] args) {
 
         ResizableArrayBagDemo();
-        LinkedBagDemo();
+        LinkedBag1Demo();
 
     }
         
@@ -26,7 +26,7 @@ public class BagDriver {
 
     }
 
-    public static void LinkedBagDemo() {
+    public static void LinkedBag1Demo() {
 
         //Initializing Bag 1 and Bag 2
 
