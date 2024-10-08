@@ -79,29 +79,168 @@ public class ResizableArrayBagDemo
    }
 
 } // end ResizableArrayBagDemo
-/*
 
- Testing the Union, Intersection, and Difference of two bags.
- First, we add to bag A.
- Adding to the bag: A B C W O W
- The bag contains 6 string(s), as follows:
- A B C W O W
+ /**
+  * //Demonstrating test cases
+  * 
+  * public static void ResizableArrayBagDemo() {
+      String[] aContent = {"A", "B", "C", "W", "O", "W"};
+      String[] bContent = {"A", "A", "B", "B", "C", "C"};
+      String[] emptyStrings = {};
+      String[] nullStrings = {null};
+      BagInterface<String> aBag = new ResizableArrayBag<>(6);
+      BagInterface<String> bBag = new ResizableArrayBag<>(6);
+      
+      System.out.println("Testing the Union, Intersection, and Difference of two bags.\n\nFirst, we add to bag A.");
+      testAdd(aBag, aContent);
+      displayBag(aBag);
+      System.out.println();
+      System.out.println("Now, we add to bag B.");
+      testAdd(bBag, bContent);
+      displayBag(bBag);
+      System.out.println();
 
- Now, we add to bag B.
- Adding to the bag: A B B C
- The bag contains 4 string(s), as follows:
- A B B C
+      System.out.println("Union of two valid bags.");
+      aBag = aBag.union(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
 
- If we wanted the union of bag A with bag B, it would look like this.
- The bag contains 10 string(s), as follows:
- A B C W O W A B B C
+      System.out.println("Testing the case where if inputed bag is null.");
+      testAdd(aBag, aContent);
+      aBag = aBag.union(null);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
 
- If we looked for the characters of bag A that intersected with bag B, it would look like this.
- The bag contains 3 string(s), as follows:
- A B C
+      System.out.println("Testing the case where both bags are empty.");
+      testAdd(aBag, emptyStrings);
+      testAdd(bBag, emptyStrings);
+      aBag = aBag.union(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
 
- Finally, if we wanted the content of bag A that were different from bag B, it would look like this.
- The bag contains 3 string(s), as follows:
- W O W
+      System.out.println("Testing if one bag full, one bag empty.");
+      testAdd(aBag, aContent);
+      testAdd(bBag, emptyStrings);
+      aBag = aBag.union(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
 
- */
+      System.out.println("Intersection of 2 valid bags.");
+      testAdd(aBag, aContent);
+      displayBag(aBag);
+      testAdd(bBag, bContent);
+      displayBag(bBag);
+      aBag = aBag.intersection(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Intersection of 2 valid bags but, comparing the other way.");
+      testAdd(aBag, aContent);
+      displayBag(aBag);
+      testAdd(bBag, bContent);
+      displayBag(bBag);
+      bBag = bBag.intersection(aBag);
+      displayBag(bBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      
+      System.out.println("Testing to see the case of null bags.");
+      testAdd(aBag, aContent);
+      testAdd(bBag, null);
+      aBag = aBag.intersection(bBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+      
+
+      System.out.println("Testing intersection of empty bags.");
+      testAdd(aBag, emptyStrings);
+      testAdd(bBag, emptyStrings);
+      aBag = aBag.intersection(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Testing the intersection of one full bag and one bag empty.");
+      testAdd(aBag, aContent);
+      testAdd(bBag, emptyStrings);
+      aBag = aBag.intersection(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Difference of 2 valid bags.");
+      testAdd(aBag, aContent);
+      displayBag(aBag);
+      testAdd(bBag, bContent);
+      displayBag(bBag);
+      aBag = aBag.difference(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Difference of 2 valid bags but, comparing the other way.");
+      testAdd(aBag, aContent);
+      displayBag(aBag);
+      testAdd(bBag, bContent);
+      displayBag(bBag);
+      bBag = bBag.difference(aBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+       
+      System.out.println("Testing to see the case of null bags.");
+      testAdd(aBag, aContent);
+      testAdd(bBag, null);
+      aBag = aBag.difference(bBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Testing difference of empty bags.");
+      testAdd(aBag, emptyStrings);
+      displayBag(aBag);
+      testAdd(bBag, emptyStrings);
+      aBag = aBag.difference(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Testing the difference of one full bag and one bag empty.");
+      testAdd(aBag, aContent);
+      testAdd(bBag, emptyStrings);
+      aBag = aBag.intersection(bBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+      System.out.println("Testing the difference of one full bag and one bag empty except, the other way.");
+      testAdd(aBag, aContent);
+      testAdd(bBag, emptyStrings);
+      bBag = bBag.intersection(aBag);
+      displayBag(aBag);
+      aBag.clear();
+      bBag.clear();
+      System.out.println();
+
+   
+  */

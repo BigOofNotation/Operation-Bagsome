@@ -266,7 +266,9 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
          
          for(int i = 0; i < maxLength; i++){
             if(otherBag.contains(bag[i])){
-               result.add(bag[i]);
+               if(!result.contains(bag[i])){
+                  result.add(bag[i]);
+               }
             }
          }
       } else {
@@ -274,7 +276,9 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
          
          for(int j = 0; j < maxLength; j++){
             if(otherBag.contains(bag[j])){
-               result.add(bag[j]);
+               if(!result.contains(bag[j])){
+                  result.add(bag[j]);
+               }
             }
          }
       }    
@@ -291,7 +295,10 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       if (otherBag == null) {
          throw new IllegalArgumentException("The other bag cannot be null.");
       }
-      BagInterface<T> result = this;
+      BagInterface<T> result = new ResizableArrayBag<>();
+      for(int x = 0; x < numberOfEntries; x++){
+         result.add(bag[x]);
+      }
 
       BagInterface<T> intersect = this.intersection(otherBag);
       T[] iArray = intersect.toArray();
