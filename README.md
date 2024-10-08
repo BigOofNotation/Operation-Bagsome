@@ -9,6 +9,12 @@ _Github: doom-boy_
 _CPP Email: eechan@cpp.edu_  
 * Worked on ResizableArrayBags and ResizableArrayBagsDemo
 
+**Josue De La Torre**
+_Github: josuedelatorre35
+_CPP Email: josued@cpp.edu 
+* Worked on BagInterface
+* Worked on Big O Notation + explanations
+
 **Matthew Bott**  
 _Github: MatthewBott_  
 _CPP Email: mabott@cpp.edu_  
