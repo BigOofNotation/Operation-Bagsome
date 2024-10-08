@@ -23,8 +23,8 @@ public class LinkedBagTest
         BagInterface<String> intersectionBag = bag1.intersection(bag2);
 
         // Test the difference of bag1 and bag2
-        BagInterface<String> leftovers1 = bag1.differenceBag1(bag2);
-        BagInterface<String> leftovers2 = bag1.differenceBag2(bag2);
+        BagInterface<String> leftovers1 = bag1.difference(bag2);
+        BagInterface<String> leftovers2 = bag2.difference(bag1);
 
         // Display the contents of bag1
         System.out.println("Bag 1 contents:");

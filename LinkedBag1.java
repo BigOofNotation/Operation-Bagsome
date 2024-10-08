@@ -182,64 +182,44 @@ public final class LinkedBag1<T> implements BagInterface<T>
 
     // Intersection method
     public BagInterface<T> intersection(BagInterface<T> BagInterface) {
-        if (BagInterface == null) throw new IllegalArgumentException("The other bag cannot be null.");
+        if (BagInterface == null) {
+            throw new IllegalArgumentException("The other bag cannot be null.");
+        }
 
-        LinkedBag1<T> resultBag = new LinkedBag1<>();
-        LinkedBag1<T> copyOfOtherBag = new LinkedBag1<>();
+        BagInterface<T> resultBag = new LinkedBag1<>();
         Node currentNode = firstNode;
         
         while (currentNode != null) {
-            copyOfOtherBag.add(currentNode.data);
-            currentNode = currentNode.next;
-        }
-        currentNode = this.firstNode;
-        while (currentNode != null) {
-            if (copyOfOtherBag.contains(currentNode.data)) {
-                resultBag.add(currentNode.data);
-                copyOfOtherBag.remove(currentNode.data);
+            if(BagInterface.contains(currentNode.data)){
+                if(!resultBag.contains(currentNode.data)){
+                    resultBag.add(currentNode.data);
+                }
             }
             currentNode = currentNode.next;
         }
         return resultBag;
     }
 
-    // Method to find difference (leftovers from Bag1)
-    public BagInterface<T> differenceBag1(BagInterface<T> BagInterface) {
-        if (BagInterface == null) throw new IllegalArgumentException("The other bag cannot be null.");
-
-        BagInterface<T> leftovers1 = new LinkedBag1<>();
-        Node currentNode = this.firstNode;
-        while (currentNode != null) {
-            leftovers1.add(currentNode.data);
-            currentNode = currentNode.next;
+    public BagInterface<T> difference(BagInterface<T> otherBag) {
+        if (otherBag == null) {
+            throw new IllegalArgumentException("The other bag cannot be null.");
         }
-        currentNode = firstNode;
-        while (currentNode != null) {
-            leftovers1.remove(currentNode.data);
-            currentNode = currentNode.next;
-        }
-        return leftovers1;
-    }
 
-    // Method to find difference (leftovers from Bag2)
-    public BagInterface<T> differenceBag2(BagInterface<T> BagInterface) {
-        if (BagInterface == null) throw new IllegalArgumentException("The other bag cannot be null.");
+        BagInterface<T> leftovers = new LinkedBag1<>();
 
-        BagInterface<T> leftovers2 = new LinkedBag1<>();
         Node currentNode = firstNode;
+        
         while (currentNode != null) {
-            leftovers2.add(currentNode.data);
+            leftovers.add(currentNode.data);
             currentNode = currentNode.next;
         }
-        currentNode = this.firstNode;
-        while (currentNode != null) {
-            leftovers2.remove(currentNode.data);
-            currentNode = currentNode.next;
+
+        BagInterface<T> intersect = this.intersection(otherBag);
+        T[] temp = intersect.toArray();
+
+        for (int i = 0; i < temp.length; i++){
+            leftovers.remove(temp[i]);
         }
-        return leftovers2;
-    }
-    
-    public BagInterface<T> difference(BagInterface<T> BagInterface) {
-        return BagInterface;
+        return leftovers;
     }
 } // end LinkedBag1
