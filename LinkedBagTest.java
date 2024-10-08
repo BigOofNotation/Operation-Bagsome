@@ -17,14 +17,14 @@ public class LinkedBagTest
         bag2.add("Pineapple");
 
         // Test the union of bag1 and bag2
-        LinkedBag1<String> unionBag = bag1.union(bag2);
+        BagInterface<String> unionBag = bag1.union(bag2);
 
         // Test the intersection of bag1 and bag2
-        LinkedBag1<String> intersectionBag = bag1.intersection(bag2);
+        BagInterface<String> intersectionBag = bag1.intersection(bag2);
 
         // Test the difference of bag1 and bag2
-        LinkedBag1<String> leftovers1 = bag1.differenceBag1(bag2);
-        LinkedBag1<String> leftovers2 = bag1.differenceBag2(bag2);
+        BagInterface<String> leftovers1 = bag1.differenceBag1(bag2);
+        BagInterface<String> leftovers2 = bag1.differenceBag2(bag2);
 
         // Display the contents of bag1
         System.out.println("Bag 1 contents:");
@@ -52,7 +52,7 @@ public class LinkedBagTest
     }
 
     // Helper method to display the contents of a bag
-    private static <T> void displayBag(LinkedBag1<T> bag)
+    private static <T> void displayBag(BagInterface<T> bag)
     {
         T[] bagArray = bag.toArray();
         for (T element : bagArray)

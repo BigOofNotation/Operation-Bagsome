@@ -48,40 +48,57 @@ public class BagDriver {
       displayBag(bBag);
 
 
-
-        //Initializing Bag 1 and Bag 2
-
-        // Printing contents of Bag 1 and Bag 2
-
-        // Demonstrating Union
-
-        // Demonstrating Intersection
-
-        // Demonstrating Difference (Bag 1 to Bag 2)
-
-        // Demonstrating Difference (Bag 2 to Bag 1)
-
-        /* Printing contents of Bags 1 and 2 again, 
-        showing content of both bags did not change */
-
     }
 
     public static void LinkedBag1Demo() {
 
-        //Initializing Bag 1 and Bag 2
+      // Create two LinkedBag1 instances
+      LinkedBag1<String> bag1 = new LinkedBag1<>();
+      LinkedBag1<String> bag2 = new LinkedBag1<>();
 
-        // Printing contents of Bag 1 and Bag 2
+      // Add elements to bag1
+      bag1.add("Apple");
+      bag1.add("Banana");
+      bag1.add("Orange");
 
-        // Demonstrating Union
+      // Add elements to bag2
+      bag2.add("Banana");
+      bag2.add("Grape");
+      bag2.add("Pineapple");
 
-        // Demonstrating Intersection
+      // Test the union of bag1 and bag2
+      BagInterface<String> unionBag = bag1.union(bag2);
 
-        // Demonstrating Difference (Bag 1 to Bag 2)
+      // Test the intersection of bag1 and bag2
+      BagInterface<String> intersectionBag = bag1.intersection(bag2);
 
-        // Demonstrating Difference (Bag 2 to Bag 1)
+      // Test the difference of bag1 and bag2
+      BagInterface<String> leftovers1 = bag1.differenceBag1(bag2);
+      BagInterface<String> leftovers2 = bag1.differenceBag2(bag2);
 
-        /* Printing contents of Bags 1 and 2 again, 
-        showing contents of both bags did not change */
+      // Display the contents of bag1
+      System.out.println("Bag 1 contents:");
+      displayLinkedBag(bag1);
+
+      // Display the contents of bag2
+      System.out.println("\nBag 2 contents:");
+      displayLinkedBag(bag2);
+
+      // Display the contents of the union bag
+      System.out.println("\nUnion of Bag 1 and Bag 2:");
+      displayLinkedBag(unionBag);
+
+      // Display the contents of the union bag
+      System.out.println("\nIntersection of Bag 1 and Bag 2:");
+      displayLinkedBag(intersectionBag);
+
+      // Display the contents of leftovers from Bag 1
+      System.out.println("\nLeftovers from Bag 1:");
+      displayLinkedBag(leftovers1);
+
+      // Display the contents of leftovers from Bag 2
+      System.out.println("\nLeftovers from Bag 2:");
+      displayLinkedBag(leftovers2);
 
     }
 
@@ -108,7 +125,16 @@ public class BagDriver {
 		System.out.println();
 	} // end displayBag
 
-    
+    // Helper method to display the contents of a bag
+    private static <T> void displayLinkedBag(BagInterface<T> bag)
+    {
+        T[] bagArray = bag.toArray();
+        for (T element : bagArray)
+        {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
 
 
 
