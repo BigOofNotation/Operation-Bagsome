@@ -18,7 +18,7 @@ _CPP Email: josued@cpp.edu
 **Matthew Bott**  
 _Github: MatthewBott_  
 _CPP Email: mabott@cpp.edu_  
-* Worked on LinkedBags and LinkedBagsDemo
+* Worked on LinkedBags and LinkedBagsTest
 
 ## Extra Features
 
